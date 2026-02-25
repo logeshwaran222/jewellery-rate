@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    float rate, weight, makingPercent;
+    float goldAmount, makingCharge, gst, total;
+
+    printf("Enter Gold Rate per gram: ");
+    scanf("%f", &rate);
+
+    printf("Enter Gold Weight (grams): ");
+    scanf("%f", &weight);
+
+    printf("Enter Making Charge (%%): ");
+    scanf("%f", &makingPercent);
+
+    goldAmount = rate * weight;
+    makingCharge = (makingPercent / 100) * goldAmount;
+    gst = 0.03 * (goldAmount + makingCharge);   // 3% GST
+    total = goldAmount + makingCharge + gst;
+
+    printf("\n----- BILL -----\n");
+    printf("Gold Amount    : %.2f\n", goldAmount);
+    printf("Making Charge  : %.2f\n", makingCharge);
+    printf("GST (3%%)       : %.2f\n", gst);
+    printf("Total Amount   : %.2f\n", total);
+
+    return 0;
+}
